@@ -1,2 +1,0 @@
-# Paranouk
-My project
