@@ -12,25 +12,6 @@ grid-template-areas:
 
 }
 
-.header {
-  grid-area: h;
-  background-color: green;
 
-}
 
-.header img {
-  width: 60px;
-  background-color: green;
-}
 
-.nav {
-  grid-area: n;
-  background-color: burlywood;
-
-}
-
-.content {
-  grid-area: c;
-  background-color: cornflowerblue;
-
-}
