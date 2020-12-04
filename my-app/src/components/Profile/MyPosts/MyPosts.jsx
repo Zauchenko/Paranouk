@@ -15,6 +15,12 @@ const MyPosts = () => {
             {id: 6, text: 'Shit', likeCount : 0}
         ]
 
+    let postDataElements = postData.map (p => {
+        return (
+            <Post message={p.text} likeCount={p.likeCount}/>)
+
+    });
+
     return (
         <div className={s.content}>
             <div>
@@ -26,13 +32,7 @@ const MyPosts = () => {
                     <button>Add post</button>
                 </div>
                 <div className={s.posts}>
-                    <Post message={postData[0].text} likeCount={postData[0].likeCount}/>
-                    <Post message={postData[1].text} likeCount={postData[1].likeCount}/>
-                    <Post message={postData[2].text} likeCount={postData[2].likeCount}/>
-                    <Post message={postData[3].text} likeCount={postData[3].likeCount}/>
-                    <Post message={postData[4].text} likeCount={postData[4].likeCount}/>
-                    <Post message={postData[5].text} likeCount={postData[5].likeCount}/>
-
+                    {postDataElements}
                 </div>
             </div>
         </div>

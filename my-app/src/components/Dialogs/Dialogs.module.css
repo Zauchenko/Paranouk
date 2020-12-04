@@ -12,10 +12,12 @@
 }
 .dialogsItems {
     padding: 10px;
+
 }
 .messages {
     padding: 10px;
-}
-.messages .massage {
 
+}
+.dialogs .messages {
+color: white;
 }
