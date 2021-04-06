@@ -1,0 +1,41 @@
+.app-wrapper {
+  display: grid;
+  padding: 30px;
+
+  grid-template-areas:
+          "h h"
+          "n c";
+
+  grid-template-rows: 20% 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 1em;
+  align-items: center;
+
+}
+.header{
+
+grid-area: h;
+  background-color: teal;
+}
+
+.header img {
+  width: 80px;
+
+}
+
+
+.nav {
+grid-area: n;
+  background-color: darkgray;
+
+
+}
+.profile {
+  position: relative;
+  grid-area: c;
+  background-color: lemonchiffon;
+}
+.profile img {
+    width: auto;
+
+}
