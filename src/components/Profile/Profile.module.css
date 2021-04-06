@@ -1,0 +1,9 @@
+.profile {
+    position: relative;
+    grid-area: c;
+    background-color: lemonchiffon;
+}
+.profile img {
+    width: auto;
+
+}

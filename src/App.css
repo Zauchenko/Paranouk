@@ -12,30 +12,7 @@
   align-items: center;
 
 }
-.header{
-
-grid-area: h;
-  background-color: teal;
-}
-
-.header img {
-  width: 80px;
-
-}
 
 
-.nav {
-grid-area: n;
-  background-color: darkgray;
 
 
-}
-.profile {
-  position: relative;
-  grid-area: c;
-  background-color: lemonchiffon;
-}
-.profile img {
-    width: auto;
-
-}
