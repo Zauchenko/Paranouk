@@ -27,6 +27,7 @@ const Profile = () => {
         </div>
     )
 }
-fdsdfs
 
-export default Profile;
+
+
+export default Profile
