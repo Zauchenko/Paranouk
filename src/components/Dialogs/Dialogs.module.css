@@ -18,9 +18,10 @@
 }
 
 .messages {
-    padding: 10px;
+    padding: 30px;
+    margin: 30px;
 }
 
 .messages .message {
-
+color: #c41515;
 }
