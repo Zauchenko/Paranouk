@@ -1,26 +1,20 @@
 import React from 'react';
 import s from './Profile.module.css';
 import Myposts from "./MyPosts/Myposts";
-
-
-
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 
 const Profile = () => {
-    return(
-        <div className={s.profile}>
+    return (
+
+
             <div>
-                <img alt='Main'
-                     src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAEbz9kIk-U4wG9osikggOUK7TKqR8nHn9Yw&usqp=CAU'/>
+                <ProfileInfo/>
+                <Myposts/>
             </div>
 
-<div>
-<Myposts/>
-</div>
-        </div>
     )
 }
 
 
-
-export default Profile
+export default Profile;
