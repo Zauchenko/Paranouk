@@ -6,9 +6,17 @@
 }
 
 .dialogsItems .dialog {
+
     padding: 15px;
 
-}.dialogsItems .dialog a {
+}
+.dialogsItems .dialog img{
+    width: 40px;
+    padding-right: 10px;
+border-radius: 40px;
+}
+
+.dialogsItems .dialog a {
 
      text-decoration: none;
 }
