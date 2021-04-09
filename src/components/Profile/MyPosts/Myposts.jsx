@@ -6,17 +6,25 @@ import Post from "./Post/Post";
 const Myposts = (props) => {
 
 
-
     let postMessagesElements = props.postMessageData.map((p) => <Post message={p.message} likecount={p.likecount}/>)
+
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        alert(text);
+
+    }
+
 
     return (
 
         <div className={s.postsBlock}>
             <h3>My posts</h3>
             <div className={s.item}>
-                <textarea>White here what you want</textarea>
+                <textarea ref={newPostElement}></textarea>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={ addPost }>Add post</button>
                 </div>
                 <div>
                     <button>Remove</button>
