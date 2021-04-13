@@ -9,6 +9,7 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 import FriendsBar from "./components/Navbar/FiensdSiteBar/FriendsSiteBar";
+import {addPost} from "./Redux/State";
 
 
 
@@ -23,7 +24,7 @@ const App = (props) => {
                 <Navbar state = {props.state.dialogPage} />
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs' render ={() => <Dialogs state = {props.state.dialogPage} />}/>
-                    <Route path='/profile' render ={() => <Profile state = {props.state.profilePage} />}/>
+                    <Route path='/profile' render ={() => <Profile state = {props.state.profilePage} addPost = {addPost} />}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
