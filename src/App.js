@@ -12,8 +12,6 @@ import FriendsBar from "./components/Navbar/FiensdSiteBar/FriendsSiteBar";
 import {addPost} from "./Redux/State";
 
 
-
-
 const App = (props) => {
 
 
@@ -21,14 +19,14 @@ const App = (props) => {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar state = {props.state.dialogPage} />
+                <Navbar state={props.state.dialogPage}/>
                 <div className='app-wrapper-content'>
-                    <Route path='/dialogs' render ={() => <Dialogs state = {props.state.dialogPage} />}/>
-                    <Route path='/profile' render ={() => <Profile state = {props.state.profilePage} addPost = {addPost} />}/>
+                    <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogPage}/>}/>
+                    <Route path='/profile' render={() => <Profile state={props.state.profilePage} addPost={addPost}/>}/>
                     <Route path='/news' component={News}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/settings' component={Settings}/>
-                    <Route path='/friends' render={() => <FriendsBar  />}/>
+                    <Route path='/friends' render={() => <FriendsBar/>}/>
 
 
                 </div>
