@@ -1,6 +1,9 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+
 
 let store = {
-    _state : {
+    _state: {
         dialogPage:
             {
                 dialogsData: [
@@ -46,36 +49,51 @@ let store = {
                     {message: 'Hello, how are you?', likecount: '20', id: '1'},
                     {message: 'What did you want?', likecount: '10', id: '2'},
                     {message: 'Fuck you', likecount: '2000', id: '3'}
-                ]
-            }
+                ],
 
+                newPostText: 'it-kamasutra.com'
+            },
 
     },
-    getState () {
+    _rerenderEntireTree() {
+    },
+
+    getState() {
         return this._state;
     },
-    rerenderEntireTree  ()  {
+    subscribe(observer) {
+        this._rerenderEntireTree = observer;
     },
-    addPost  (postMessage)  {
-        let newPost = {
-            id: 5,
-            message: postMessage,
-            likecount: 15
-        };
 
-        this._state.profilePage.postMessageData.push(newPost);
-        this.rerenderEntireTree(this._state);
+    updateNewPostText(newText) {
+        this._state.profilePage.newPostText = newText;
+        this._rerenderEntireTree(this._state);
     },
-    subscribe (observer) {
-        this.rerenderEntireTree = observer;
-    }
+
+    dispatch(action) {
+
+        if (action.type === ADD_POST) {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likecount: 15
+            };
+
+            this._state.profilePage.postMessageData.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._rerenderEntireTree(this._state);
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
+            this._state.profilePage.newPostText = action.newText;
+            this._rerenderEntireTree(this._state);
+        }
+    },
+
+
 }
 
 
-
-
-
-
+export const actionCreatorAddPost = () => ({type: 'ADD-POST'})
+export const actionCreatorUpdateNewPostText = (text) => ({type: 'UPDATE-NEW-POST-TEXT', newText: text})
 
 
 export default store;
