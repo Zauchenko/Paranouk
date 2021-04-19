@@ -1,7 +1,6 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
-const SEND_MESSAGE = 'SEND-MESSAGE';
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+
 
 let store = {
     _state: {
@@ -75,31 +74,9 @@ let store = {
 
     dispatch(action) {
 
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likecount: 15
-            };
-
-            this._state.profilePage.postMessageData.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._rerenderEntireTree(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._rerenderEntireTree(this._state);
-        }
-        else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.dialogPage.newMessageBody = action.body;
-            this._rerenderEntireTree(this._state);
-        }
-        else if (action.type === SEND_MESSAGE) {
-            let body = this._state.dialogPage.newMessageBody;
-            this._state.dialogPage.newMessageBody = '';
-            this._state.dialogPage.messageData.push({message: body, id: '6'});
-            this._rerenderEntireTree(this._state);
-        }
-
+        this._state.dialogPage = dialogsReducer(this._state.dialogPage, action);
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._rerenderEntireTree(this._state);
 
 
     },
@@ -107,10 +84,5 @@ let store = {
 
 }
 
-
-export const actionCreatorAddPost = () => ({type: 'ADD-POST'})
-export const actionCreatorUpdateNewPostText = (text) => ({type: 'UPDATE-NEW-POST-TEXT', newText: text})
-export const actionCreatorSendMessage = () => ({type: 'SEND-MESSAGE'})
-export const actionCreatorUpdateNewMessageText = (body)=> ({type: 'UPDATE-NEW-MESSAGE-BODY', body: body})
 
 export default store;
