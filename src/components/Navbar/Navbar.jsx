@@ -32,9 +32,9 @@ const Navbar = (props) => {
                 <NavLink to ='/friends' activeClassName = {s.activeLink}>Friends </NavLink>
             </div>
 
-    <div className={s.topFriendsCSS}>{props.state.dialogsData[0].name}</div>
-    <div className={s.topFriendsCSS}>{props.state.dialogsData[1].name}</div>
-    <div className={s.topFriendsCSS}>{props.state.dialogsData[3].name}</div>
+    {/*<div className={s.topFriendsCSS}>{props.state.dialogsData[0].name}</div>*/}
+    {/*<div className={s.topFriendsCSS}>{props.state.dialogsData[1].name}</div>*/}
+    {/*<div className={s.topFriendsCSS}>{props.state.dialogsData[3].name}</div>*/}
 
         </nav>
     )

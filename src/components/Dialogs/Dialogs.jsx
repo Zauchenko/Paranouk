@@ -21,7 +21,7 @@ let state = props.dialogPage;
 
 
 let addMessage = () => {
-      props.addMesssage();
+      props.addMessage();
 }
 
 let updateMessage = (e) => {
