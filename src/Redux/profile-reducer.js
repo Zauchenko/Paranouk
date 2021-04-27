@@ -7,6 +7,7 @@ let initialState = {
         {message: 'What did you want?', likecount: '10', id: '2'},
         {message: 'Fuck you', likecount: '2000', id: '3'}
     ],
+    newPostText:'Write here'
 
 
 };
@@ -20,19 +21,21 @@ const profileReducer = (state = initialState, action) => {
                 likecount: 15,
                 id: 5
             };
-
-            let stateCopy = {...state};
-            stateCopy.postMessageData = [...state.postMessageData];
+            return {
+                ...state,
+                postMessageData: [...state.postMessageData, newPost],
+                newPostText: ''
+            };
             // noinspection JSCheckFunctionSignatures
-            stateCopy.postMessageData.push(newPost);
-            stateCopy.newPostText = '';
-            return stateCopy;
+
+
         }
         case UPDATE_NEW_POST_TEXT: {
-            let stateCopy = {...state};
-            stateCopy.postMessageData = [...state.postMessageData];
-            stateCopy.newPostText = action.newText;
-            return stateCopy;
+            return {
+                ...state,
+                newPostText: action.newText
+            };
+
         }
         default:
             return state;
