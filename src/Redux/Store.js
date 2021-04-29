@@ -88,7 +88,7 @@ let store = {
 export default store;
 
 
-//Users data
+//UsersApiComponent data
 
 // [
 //     {
