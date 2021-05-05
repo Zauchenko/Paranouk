@@ -1,3 +1,10 @@
 .descriptionBlock{
     padding: 10px;
 }
+
+
+
+.profileInfo .jobPhoto img {
+    width: 100px;
+    height: 100px;
+}

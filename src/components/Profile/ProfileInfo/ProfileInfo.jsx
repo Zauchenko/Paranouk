@@ -1,6 +1,8 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../Common/Preloader/Preloader";
+import yesPhoto from '../../Images/Yes.jpg'
+import noPhoto from '../../Images/no.png'
 
 
 
@@ -20,7 +22,12 @@ const ProfileInfo = (props) => {
             </div>
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large}/>
-                Ava
+
+                <div className={s.jobPhoto}>
+                   Looking for a JOB: {props.profile.lookingForAJob ? <img src={yesPhoto}/> : <img src={noPhoto}/>}
+                </div>
+
+
             </div>
         </div>
 
