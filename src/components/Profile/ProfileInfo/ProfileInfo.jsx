@@ -3,7 +3,7 @@ import s from './ProfileInfo.module.css';
 import Preloader from "../../Common/Preloader/Preloader";
 import yesPhoto from '../../Images/Yes.jpg'
 import noPhoto from '../../Images/no.png'
-
+import noAvatar from '../../Images/user.jpg'
 
 
 const ProfileInfo = (props) => {
@@ -21,7 +21,9 @@ const ProfileInfo = (props) => {
                      src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAEbz9kIk-U4wG9osikggOUK7TKqR8nHn9Yw&usqp=CAU'/>
             </div>
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large}/>
+
+                {props.profile.photos.large ? <img src={props.profile.photos.large}/> : <img src={noAvatar}/>}
+
 
                 <div className={s.jobPhoto}>
                    Looking for a JOB: {props.profile.lookingForAJob ? <img src={yesPhoto}/> : <img src={noPhoto}/>}
