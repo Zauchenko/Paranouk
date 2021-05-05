@@ -30,6 +30,6 @@ let mapDispatchToProps = (dispatch) => {
 
 
 
-const MypostsContainer = connect(mapStoreToProps, mapDispatchToProps) (Myposts);
+const MyPostsContainer = connect(mapStoreToProps, mapDispatchToProps) (Myposts);
 
-export default MypostsContainer;
+export default MyPostsContainer;
