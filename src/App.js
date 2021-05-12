@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-
 import Navbar from "./components/Navbar/Navbar";
 import {Route} from 'react-router-dom';
 import News from "./components/News/News";

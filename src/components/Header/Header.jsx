@@ -5,19 +5,19 @@ import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
 
-    return(
-    <header className={s.header}>
-        <img alt={"logo"}
-             src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUChMGlP-keUWH_P8DKHQQ4R1SNOK5CdMULg&usqp=CAU'/>
- <div className={s.loginBlock}>
+    return (
+        <header className={s.header}>
+            <img alt={"logo"}
+                 src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUChMGlP-keUWH_P8DKHQQ4R1SNOK5CdMULg&usqp=CAU'/>
+            <div className={s.loginBlock}>
 
-     {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
- </div>
+                {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
+            </div>
 
-    </header>
+        </header>
     )
 }
 
 
 export default Header;
-// {props.isAuth ? props.login :<NavLink to={'/login'}>Login</NavLink>}
+
