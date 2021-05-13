@@ -13,18 +13,15 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/login";
 
 
-
 const App = (props) => {
-
-
     return (
         <div className='app-wrapper'>
             <HeaderContainer/>
-            <Navbar />
+            <Navbar/>
             <div className='app-wrapper-content'>
-                <Route path='/dialogs' render={() => <DialogsContainer />}/>
-                <Route path='/profile/:userId?' render={() => <ProfileContainer />}/>
-                <Route path='/users' render={() => <Userscontainer />}/>
+                <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                <Route path='/profile/:userId?' render={() => <ProfileContainer/>}/>
+                <Route path='/users' render={() => <Userscontainer/>}/>
                 <Route path='/news' component={News}/>
                 <Route path='/music' component={Music}/>
                 <Route path='/settings' component={Settings}/>
@@ -32,8 +29,6 @@ const App = (props) => {
                 <Route path='/login' render={() => <Login/>}/>
             </div>
         </div>
-
-
     )
 }
 
