@@ -3,6 +3,8 @@ import s from './Dialogs.module.css';
 
 import DialogItem from "./DialogsItem/DialogsItem";
 import Message from "./Messages/Messages";
+import Redirect from "react-router-dom/es/Redirect";
+
 
 
 
@@ -28,6 +30,8 @@ let updateMessage = (e) => {
 let body = e.target.value;
     props.updateMessage(body);
 }
+
+if (!props.isAuth ) return <Redirect to = {"/login"}/>
 
     return (
 
