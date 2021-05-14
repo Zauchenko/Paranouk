@@ -17,7 +17,7 @@ export const usersAPI = {
 
     authUser() {
         return instance.get(`auth/me`)
-            .then(response => response.data)
+            .then(response => response.data);
     },
 
     unfollowUsers(userId) {
@@ -29,9 +29,29 @@ export const usersAPI = {
             .then(response => response.data)
     },
     getProfileId(userId) {
+        console.warn('Use profileAPI.getProfileId');
+        return profileAPI.getProfileId(userId);
+    }
+
+
+}
+export const profileAPI = {
+
+    getProfileId(userId) {
         return instance.get(`profile/` + userId)
+            .then(response => response.data)
+    },
+    getStatus(userId) {
+        return instance.get(`profile/status/` + userId)
+            .then(response => response.data)
+    },
+    updateStatus(status) {
+        return instance.put(`profile/status/`, {status: status})
             .then(response => response.data)
     }
 
 
 }
+
+
+
