@@ -1,5 +1,10 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
+import {Input} from "../Common/Form/FormsControl";
+import {required} from "../../utils/validators/validator";
+import {login, logout} from "../../Redux/auth-reducer";
+import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
 
 const LoginForm = (props) => {
     return (
@@ -7,13 +12,15 @@ const LoginForm = (props) => {
             <h1>Login</h1>
             <form onSubmit={props.handleSubmit}>
                 <div>
-                    <Field placeholder={"Login"} name={"login"} component={"input"}/>
+                    <Field placeholder={"email"} name={"email"} component={Input}
+                           validate={[required]}/>
                 </div>
                 <div>
-                    <Field placeholder={"Password"} name={"password"} component={"input"}/>
+                    <Field placeholder={"Password"} name={"password"} component={Input} type={"password"}
+                           validate={[required]}/>
                 </div>
                 <div>
-                    <Field component={"input"} type={"checkbox"} name={"remember me"}/> remember me
+                    <Field component={Input} type={"checkbox"} name={"rememberMe"}/> remember me
                 </div>
                 <div>
                     <button>Login</button>
@@ -25,11 +32,18 @@ const LoginForm = (props) => {
 
 const LoginReduxForm = reduxForm({form: 'login'})(LoginForm)
 
-const  onSubmit = (formData) => {
 
-}
 
 const Login = (props) => {
+    const  onSubmit = (formData) => {
+        props.login(formData.email, formData.password, formData.rememberMe)
+    }
+    if (props.isAuth) {
+        return <Redirect to={'/profile'}/>
+    }
+
+
+
     return (
         <div>
 
@@ -37,6 +51,9 @@ const Login = (props) => {
         </div>
     )
 }
+const mapStateToProps = (state) => ({
+ isAuth: state.auth.isAuth
+})
 
 
-export default Login;
+export default connect (mapStateToProps, {login,}) (Login);
