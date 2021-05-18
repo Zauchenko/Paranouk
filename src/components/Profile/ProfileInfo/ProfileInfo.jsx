@@ -23,11 +23,11 @@ const ProfileInfo = (props) => {
             {/*</div>*/}
             <div className={s.descriptionBlock}>
 
-                {props.profile.photos.large ? <img src={props.profile.photos.large}/> : <img src={noAvatar}/>}
+                {props.profile.photos.large ? <img alt={'large photo'} src={props.profile.photos.large}/> : <img alt={'if no avatar'} src={noAvatar}/>}
                 <ProfileStatusWithHooks status ={props.status} updateStatus={props.updateStatus}/>
 
                 <div className={s.jobPhoto}>
-                   Looking for a JOB: {props.profile.lookingForAJob ? <img src={yesPhoto}/> : <img src={noPhoto}/>}
+                   Looking for a JOB: {props.profile.lookingForAJob ? <img alt={"if yes photo"} src={yesPhoto}/> : <img alt={'no photo'} src={noPhoto}/>}
                 </div>
 
 
