@@ -1,4 +1,3 @@
-import loader from '../../Images/1485.gif';
 import React from 'react';
 import styles from './preloader.module.css';
 
@@ -23,4 +22,3 @@ let Preloader = (props) => {
 }
 
 export default Preloader;
-// <img  src={loader}/>
