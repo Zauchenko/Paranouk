@@ -7,9 +7,9 @@ import noAvatar from '../../Images/user.jpg';
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 
-const ProfileInfo = (props) => {
+const ProfileInfo = ({profile, status, updateStatus}) => {
 
-    if (!props.profile) {
+    if (!profile) {
         return <Preloader/>
     }
 
@@ -17,17 +17,15 @@ const ProfileInfo = (props) => {
     return (
 
         <div className={s.profileInfo}>
-            {/*<div>*/}
-            {/*    <img alt='Main'*/}
-            {/*         src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAEbz9kIk-U4wG9osikggOUK7TKqR8nHn9Yw&usqp=CAU'/>*/}
-            {/*</div>*/}
             <div className={s.descriptionBlock}>
 
-                {props.profile.photos.large ? <img alt={'large'} src={props.profile.photos.large}/> : <img alt={'if no avatar'} src={noAvatar}/>}
-                <ProfileStatusWithHooks status ={props.status} updateStatus={props.updateStatus}/>
+                {profile.photos.large ? <img alt={'large'} src={profile.photos.large}/> :
+                    <img alt={'if no avatar'} src={noAvatar}/>}
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
 
                 <div className={s.jobPhoto}>
-                   Looking for a JOB: {props.profile.lookingForAJob ? <img alt={"if yes "} src={yesPhoto}/> : <img alt={'no'} src={noPhoto}/>}
+                    Looking for a JOB: {profile.lookingForAJob ? <img alt={"if yes "} src={yesPhoto}/> :
+                    <img alt={'no'} src={noPhoto}/>}
                 </div>
 
 
