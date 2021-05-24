@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Paranouk/static/css/main.dead528f.chunk.css",
+    "main.js": "/Paranouk/static/js/main.d9030e6e.chunk.js",
+    "main.js.map": "/Paranouk/static/js/main.d9030e6e.chunk.js.map",
+    "runtime-main.js": "/Paranouk/static/js/runtime-main.6cc38e11.js",
+    "runtime-main.js.map": "/Paranouk/static/js/runtime-main.6cc38e11.js.map",
+    "static/js/2.1d522b0b.chunk.js": "/Paranouk/static/js/2.1d522b0b.chunk.js",
+    "static/js/2.1d522b0b.chunk.js.map": "/Paranouk/static/js/2.1d522b0b.chunk.js.map",
+    "static/css/3.600b6e49.chunk.css": "/Paranouk/static/css/3.600b6e49.chunk.css",
+    "static/js/3.1e4a8066.chunk.js": "/Paranouk/static/js/3.1e4a8066.chunk.js",
+    "static/js/3.1e4a8066.chunk.js.map": "/Paranouk/static/js/3.1e4a8066.chunk.js.map",
+    "static/css/4.69eab73a.chunk.css": "/Paranouk/static/css/4.69eab73a.chunk.css",
+    "static/js/4.f63bc350.chunk.js": "/Paranouk/static/js/4.f63bc350.chunk.js",
+    "static/js/4.f63bc350.chunk.js.map": "/Paranouk/static/js/4.f63bc350.chunk.js.map",
+    "static/js/5.06473cd1.chunk.js": "/Paranouk/static/js/5.06473cd1.chunk.js",
+    "static/js/5.06473cd1.chunk.js.map": "/Paranouk/static/js/5.06473cd1.chunk.js.map",
+    "index.html": "/Paranouk/index.html",
+    "static/css/3.600b6e49.chunk.css.map": "/Paranouk/static/css/3.600b6e49.chunk.css.map",
+    "static/css/4.69eab73a.chunk.css.map": "/Paranouk/static/css/4.69eab73a.chunk.css.map",
+    "static/css/main.dead528f.chunk.css.map": "/Paranouk/static/css/main.dead528f.chunk.css.map",
+    "static/js/2.1d522b0b.chunk.js.LICENSE.txt": "/Paranouk/static/js/2.1d522b0b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6cc38e11.js",
+    "static/js/2.1d522b0b.chunk.js",
+    "static/css/main.dead528f.chunk.css",
+    "static/js/main.d9030e6e.chunk.js"
+  ]
+}
