@@ -7,20 +7,27 @@ import noAvatar from '../../Images/user.jpg';
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 
-const ProfileInfo = ({profile, status, updateStatus}) => {
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
 
     if (!profile) {
         return <Preloader/>
     }
 
+const onMainPhotoSelected = (e) => {
+ if (e.target.files[0]) {
+     savePhoto(e.target.files[0]);
+ }
+}
 
     return (
 
         <div className={s.profileInfo}>
             <div className={s.descriptionBlock}>
 
-                {profile.photos.large ? <img alt={'large'} src={profile.photos.large}/> :
-                    <img alt={'if no avatar'} src={noAvatar}/>}
+                 <img alt={'large'} src={profile.photos.large || noAvatar }/>
+                <div>
+                 {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+                </div>
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
 
                 <div className={s.jobPhoto}>
@@ -37,3 +44,4 @@ const ProfileInfo = ({profile, status, updateStatus}) => {
 
 
 export default ProfileInfo;
+
