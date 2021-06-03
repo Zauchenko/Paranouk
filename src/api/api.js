@@ -29,7 +29,7 @@ export const usersAPI = {
             .then(response => response.data)
     },
     getProfileId(userId) {
-        console.warn('Use profileAPI.getProfileId');
+        // console.warn('Use profileAPI.getProfileId');
         return profileAPI.getProfileId(userId);
     }
 

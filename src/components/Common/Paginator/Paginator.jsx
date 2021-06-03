@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import styles from "./Paginator.module.css";
-import ReactPaginate from 'react-paginate';
 import cn from "classnames";
 
 

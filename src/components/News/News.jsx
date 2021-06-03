@@ -1,9 +1,16 @@
 import React from 'react';
 import s from './News.module.css';
+import { Button } from 'antd';
+import 'antd/dist/antd.css';
+
+
 
 const News = () => {
     return (
-        <div className={s.mainMenu}>News</div>
+        <div>
+            <Button type="primary">Primary Button</Button>
+
+        </div>
 
     )
 }

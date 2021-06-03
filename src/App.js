@@ -1,13 +1,11 @@
-import React, {Suspense} from 'react';
+import React from 'react';
 import './App.css';
 import Navbar from "./components/Navbar/Navbar";
 import {withRouter, Route} from 'react-router-dom';
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
-// import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import Userscontainer from "./components/Users/Userscontainer";
-// import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/login";
 import {connect} from "react-redux";
@@ -29,7 +27,6 @@ class App extends React.Component {
     render() {
         if (!this.props.initialized)
             return <Preloader/>
-
 
         return (
             <div className='app-wrapper'>

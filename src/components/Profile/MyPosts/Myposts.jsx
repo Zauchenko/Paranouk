@@ -9,7 +9,7 @@ const Myposts = React.memo(props => {
 
 
 
-    let postMessagesElements = props.postMessageData.map((p) => <Post message={p.message} likecount={p.likecount}/>)
+    let postMessagesElements = props.postMessageData.map((p) => <Post message={p.message} key={p.id} likecount={p.likecount}/>)
 
     let addPost = (values) => {
         props.addPost(values.newPostBody)
