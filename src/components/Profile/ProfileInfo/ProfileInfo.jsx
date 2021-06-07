@@ -13,26 +13,39 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
         return <Preloader/>
     }
 
-const onMainPhotoSelected = (e) => {
- if (e.target.files[0]) {
-     savePhoto(e.target.files[0]);
- }
-}
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files[0]) {
+            savePhoto(e.target.files[0]);
+        }
+    }
 
     return (
 
         <div className={s.profileInfo}>
             <div className={s.descriptionBlock}>
 
-                 <img alt={'large'} src={profile.photos.large || noAvatar }/>
                 <div>
-                 {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+                    <b>{profile.fullName}</b>
+                </div>
+
+
+                <img alt={'large'} src={profile.photos.large || noAvatar}/>
+                <div>
+                    {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
                 </div>
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/>
 
                 <div className={s.jobPhoto}>
-                    Looking for a JOB: {profile.lookingForAJob ? <img alt={"if yes "} src={yesPhoto}/> :
+                    <b>Looking for a JOB</b>: {profile.lookingForAJob ? <img alt={"if yes "} src={yesPhoto}/> :
                     <img alt={'no'} src={noPhoto}/>}
+                </div>
+                {profile.lookingForAJob &&
+                <div>
+                    <b>LFJ description</b>: {profile.lookingForAJobDescription}
+                </div>
+                }
+                <div>
+                    <b>About Me</b>: {profile.aboutMe || 'Nothing'}
                 </div>
 
 
