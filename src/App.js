@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Navbar from "./components/Navbar/Navbar";
+// import Navbar from "./components/Navbar/Navbar";
 import {withRouter, Route, Switch, Redirect, NavLink} from 'react-router-dom';
 import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
@@ -78,7 +78,7 @@ class App extends React.Component {
                         </Content>
                     </Layout>
                 </Content>
-                <Footer style={{textAlign: 'center'}}> 2021 Created by Ant Zaichenko</Footer>
+                <Footer style={{textAlign: 'center'}}> 2021 Created by Zaichenko</Footer>
             </Layout>
 
 
